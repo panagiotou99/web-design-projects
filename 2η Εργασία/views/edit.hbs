@@ -1,0 +1,18 @@
+<main>
+   <h1>Edit Book</h1>
+   <section id="BooksWrapper">
+      <form action="/favorites" method="POST"> 
+         <h3>Title</h3>
+         <input type="text" class="textInput" id="input1" name="title" value="{{book.title}}"></input>
+         <h3>Subtitle</h3>
+         <input type="text" class="textInput" id="input2" name="subtitle" value="{{book.subtitle}}"></input>
+         <h3>Author</h3>
+         <input type="text" class="textInput" id="input3" name="author" value="{{book.author}}"></input>
+         <h3>ID</h3>
+         <input type="text" class="textInput" id="input4" readonly="readonly" name="id" value="{{book.id}}"></input>
+         <h3>Comments</h3>
+         <textarea type="text" class="textInput" name="comment" placeholder="Add your opinions on this book"></textarea>
+         <button class="editBttn">Submit changes</button>
+      </form>
+   </section>
+</main>

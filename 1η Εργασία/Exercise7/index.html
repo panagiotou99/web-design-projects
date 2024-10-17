@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../Exercise4/media/favicon.png" />
+  <link rel="stylesheet" href="styles.css">
+  <title>AR Filters - Αρχική</title>
+</head>
+
+<body class="container" onload='dailybg()'>
+  <header>
+    <picture>
+      <source media="(min-width:900px)" srcset="../Exercise4/media/banner1.png">
+      <source media="(min-width:600px)" srcset="media/TABLET-banner1.png">
+      <img src="media/MIN-banner1.png" id="banner" alt="Website's banner">
+    </picture>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Αρχική</a></li>
+        <li><a href="general_principles.html">Γενικές Αρχές Ανάπτυξης</a></li>
+        <li><a href="tips.html">Προετοιμασία</a></li>
+        <li><a href="../index.html" id="exit">Έξοδος</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1 id='demo'>Αρχική</h1>
+      <figure>
+        <picture>
+          <source media="(min-width:900px)" srcset="../Exercise4/media/banner2.jpg">
+          <source media="(min-width:600px)" srcset="media/TABLET-banner2.jpg">
+          <img src="media/MIN-banner2.jpg" alt="Σκίτσο ενός Snapchat Filter">
+        </picture>
+        <figcaption>To Snapchat εισήγαγε τα "Lenses" (που ήταν η πρώτη ονομασία των φίλτρων του) τον Ιανουάριο του 2015.
+        </figcaption>
+      </figure>
+      <button onclick='boldEverything()' class="smoll-btm">Bold Everything!</button>
+      <div id="required_2_columns">
+        <p id="col1">Οι περισσότεροι χρήστες των δημοφιλών ιστοσελίδων κοινωνικής δικτύωσης Snapchat, Instagram, Μessenger και τελευταία Tik Tok, χρησιμοποιούν συχνά φίλτρα επαυξημένης πραγματικότητας ("<em>Augmented Reality</em>", γνωστή ευρέως ως AR). Υπάρχουν όλων
+          των ειδών φίλτρα, από χιουμοριστικά (για παράδειγμα το ευρέως γνωστό φίλτρο με τα αυτιά και το στόμα του σκύλου) μέχρι και φίλτρα που εξαφανίζουν κάθε ατέλεια και παραμορφώνουν τελείως τα χαρακτηριστικά του προσώπου (δίνοντας μεγαλύτερα χείλη
+          και μικρότερη μύτη). Με την πάροδο του χρόνου διαρκώς αυξάνεται η συλλογή των φίλτρων αυτών και οι μέθοδοι λειτουργίας τους εμπλουτίζονται.
+        </p>
+        <p id="col2">
+          Τα φίλτρα είναι προγραμματισμένα να αναγνωρίζουν το πρόσωπο από τον φακό της κάμερας του έξυπνου τηλεφώνου ή της κάμερας του υπολογιστή και προσθέτουν τα διάφορα χαρακτηριστικά ζωντανά στην οθόνη. Στην ιστοσελίδα αυτή παρουσιάζονται πώς λειτουργούν αυτά
+          τα φίλτρα, τη βασική τεχνολογία που χρησιμοποιούν και τα πιο συχνά εργαλεία για τη δημιουργία ενός τέτοιου φίλτρου.
+        </p>
+      </div>
+      <div class="button">
+        <a href="general_principles.html">Περισσότερα</a>
+      </div>
+    </article>
+    <article>
+      <h2>Λογισμικό Δημιουργίας Φίλτρων</h2>
+      <figure>
+        <picture>
+          <source media="(min-width:900px)" srcset="../Exercise4/media/banner3.jpeg">
+          <source media="(min-width:600px)" srcset="media/TABLET-banner3.jpg">
+          <img src="media/MIN-banner3.jpg" alt="Logo του λογισμικού Spark AR Studio" />
+        </picture>
+        <figcaption>Το Spark AR του Facebook κυκλοφόρησε τον Αύγουστο του 2018.</figcaption>
+      </figure>
+      <button onclick='moreInfo()' class="smoll-btm">More Info!</button>
+      <p id="extraInfo">Αν δεν σας ενδιαφέρει η θεωρία και ενδιαφέρεστε να δημιουργήσετε ένα φίλτρο AR για να το μοιραστείτε με τους φίλους σας στα social media, τότε το "Spark AR Studio" είναι το τέλειο λογισμικό για εσάς.</p>
+
+      <div class="button">
+        <a href="https://sparkar.facebook.com/ar-studio/" target="_blank">Κατεβάστε Εδώ</a>
+      </div>
+    </article>
+  </main>
+  <aside>
+    <ul>
+      <li>
+        <h2>Πιο Δημοφιλή</h2>
+      </li>
+      <li><img src="../Exercise4/media/1.gif" alt="Dog Filter by Snapchat"></li>
+      <li><img src="../Exercise4/media/2.gif" alt="Rainbow Vommit by Snapchat"></li>
+      <li><img src="../Exercise4/media/3.gif" alt="Gender Swap by Snapchat"></li>
+      <li><img src="../Exercise4/media/4.gif" alt="Pixels Wings taken by Instagram user"></li>
+      <li><img src="../Exercise4/media/5.gif" alt="Sci-fi Filter taken by Instagram user"></li>
+      <li>
+        <h2>Νέες Προσθήκες</h2>
+      </li>
+      <li><img src="../Exercise4/media/6.gif" alt="Modern abstract filter taken by Instagram user"></li>
+      <li><img src="../Exercise4/media/7.gif" alt="Dragon Tattoo filter taken by Instagram user"></li>
+      <li><img src="../Exercise4/media/8.gif" alt="Hello Kitty bandage taked by Instagram user"></li>
+    </ul>
+  </aside>
+  <footer>
+    <p>Copyright &copy; 2021 All Rights Reserved by Panagiotis Panagiotou</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

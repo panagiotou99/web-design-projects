@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="el">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="Book Collection Website" />
+      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="icon" type="image/png" href="/media/favicon.ico">
+      {{link}}
+      <title>{{page_title}}</title>
+   </head>
+   <body class="container">
+      <header>
+         <picture>
+            <source media="(min-width:900px)" srcset="/media/banner1.jpg">
+            <img src="/media/banner2.jpg" id="banner" alt="Website's banner">
+         </picture>
+         <nav>
+            <ul>
+               <li><a href="/search" class={{navigation_status_1}}>Search Book</a></li>
+               <li><a href="/favorites" class={{navigation_status_2}}>My Favorite Books</a></li>
+            </ul>
+         </nav>
+      </header>
+      {{{body}}}
+      <footer>
+         <p>Copyright &copy; 2021 All Rights Reserved by Panagiotis Panagiotou</p>
+      </footer>
+      <script src="js/{{script}}.js"></script>
+   </body>
+</html>

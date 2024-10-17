@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../Exercise4/media/favicon.png" />
+  <link rel="stylesheet" href="styles.css">
+  <title>AR Filters - Εγγραφή</title>
+</head>
+
+<body class="container" onload='dailybg()'>
+  <header>
+    <picture>
+      <source media="(min-width:900px)" srcset="../Exercise4/media/banner1.png">
+      <source media="(min-width:600px)" srcset="media/TABLET-banner1.png">
+      <img src="media/MIN-banner1.png" id="banner" alt="Website's banner">
+    </picture>
+    <nav>
+      <ul>
+        <li><a href="index.html">Αρχική</a></li>
+        <li><a href="form.html" class="active">Εγγραφή</a></li>
+        <li><a href="general_principles.html">Γενικές Αρχές Ανάπτυξης</a></li>
+        <li><a href="tips.html">Προετοιμασία</a></li>
+        <li><a href="../index.html" id='exit'>Έξοδος</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>Δημιουργία Λογαριασμού</h1>
+      <section class="form-container">
+        <form id="form" class="form" action="/action_page.php">
+          <fieldset>
+            <legend>
+              <h4>Στοιχεία Χρήστη</h4></legend>
+            <section class="input-checker">
+              <h5><label for="username">Όνομα Χρήστη</label></h5>
+              <input type="text" name="username" placeholder="Πχ. panagiotou99" id="username" pattern="(?![0-9]{1,15}$)[a-zA-Z0-9-]{4,30}$" autocomplete="off" required />
+              <small>Μήνυμα Λάθους</small>
+              <details>
+                <summary>Έγκυρα Ονόματα Χρήστη</summary>
+                <ul class="valid_info">
+                  <li>Tο όνομα χρήστη πρέπει να περιλαμβάνει 4-30 χαρακτήρες.</li>
+                  <li>Eπιτρέπονται γράμματα του λατινικού αλφάβητο (μικρά ή κεφαλαία), αριθμοί και η παύλα (-).</li>
+                  <li>Δεν γίνεται όλοι οι χαρακτήρες να είναι αριθμοί.</li>
+                </ul>
+              </details>
+            </section>
+            <section class="input-checker">
+              <h5><label for="email">Email</label></h5>
+              <input type="text" name="email" placeholder="Πχ. p3180139@aueb.gr" id="email" pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="on" required/>
+              <small>Μήνυμα Λάθους</small>
+            </section>
+            <section class="input-checker">
+              <h5><label for="password">Κωδικός</label></h5>
+              <input type="password" name="password" placeholder="Κωδικός" id="password" pattern="(?![0-9]{1,15}$)[a-zA-Z0-9-]{4,30}$" autocomplete="on" required/>
+              <small>Μήνυμα Λάθους</small>
+            </section>
+            <section class="input-checker">
+              <h5><label for="password2">Επιβεβαίωση Κωδικού</label></h5>
+              <input type="password" name="password2" placeholder="Κωδικός ξανά" id="password2" required>
+              <small>Μήνυμα Λάθους</small>
+              <details>
+                <summary>Έγκυροι Κωδικοί</summary>
+                <ul class="valid_info">
+                  <li>O κωδικός πρέπει να περιλαμβάνει τουλάχιστον 8 μέχρι 30 χαρακτήρες.</li>
+                  <li>Eπιτρέπονται μόνο γράμματα του λατινικού αλφάβητο (μικρά ή κεφαλαία) και αριθμοί.</li>
+                  <li>Ο κωδικός πρέπει να περιλαμβάνει τουλάχιστον ένα γράμμα και έναν αριθμό.</li>
+                </ul>
+              </details>
+            </section>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <h4>Προσωπικά Στοιχεία</h4></legend>
+            <section class="input-checker">
+              <h5><label for="name">Όνομα</label></h5>
+              <input type="text" name="name" id="name" placeholder="To όνομα σου" pattern="([a-zA-Z]+\s)*[a-zA-Z]+$" title="Μόνο λατινικοί χαρακτήρες, max:30" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="surname">Επώνυμο</label></h5>
+              <input type="text" name="surname" id="surname" placeholder="To επώνυμο σου" pattern="([a-zA-Z]+\s)*[a-zA-Z]+$" title="Μόνο λατινικοί χαρακτήρες, max:30" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="date_of_birth">Ημερομηνία Γέννησης</label></h5>
+              <input type="date" id="date_of_birth" name="date_of_birth" min="1900-01-01" max="2010-01-01" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="country">Χώρα</label></h5>
+              <select id="country" name="country" required>
+                <option value="" selected disabled hidden>Η χώρα σου</option>
+                <option value="Cyprus">Ελλάδα</option>
+                <option value="Greece">Κύπρος</option>
+                <option value="Greece">Άλλη</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="town">Πόλη</label></h5>
+              <input type="text" name="town" id="town" placeholder="H πόλη σου" pattern="([a-zA-Z]+\s)*[a-zA-Z]+$" title="Μόνο λατινικοί χαρακτήρες, max:30" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="postalCode">Ταχυδρομικός Κώδικας</label></h5>
+              <input type="number" name="postalCode" id="postalCode" min="10000" max="99999" placeholder="Ο ταχυδρομικός κώδικας σου" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="address">Διεύθυνση</label></h5>
+              <input type="text" name="address" id="address" placeholder="H διεύθυνση κατοικίας σου" required>
+            </section>
+            <section class="input-checker">
+              <h5><label for="telephone_number">Σταθερό Τηλέφωνο</label></h5>
+              <input type="tel" id="telephone_number" name="telephone_number" placeholder="Το τηλέφωνο σου" pattern="[0-9]{10}" title="Απαιτείται αριθμός 10 ψηφίων" required>
+            </section>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <h4>Προαιρετικό Ερωτηματολόγιο</h4></legend>
+            <section class="input-checker">
+              <h5><label for="question_1">1.Ποιο social media χρησιμοποιείς περισσότερο;</label></h5>
+              <input list="socials" name="question_1" id="question_1" autocomplete="on" placeholder="Γράψε ή επέλεξε εδώ">
+              <datalist id="socials">
+                <option value="Facebook">
+                  <option value="Instagram">
+                    <option value="Snapchat">
+                      <option value="Tik Tok">
+              </datalist>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_2">2. Πόσο συχνά χρησιμοποιείς AR φίλτρα;</label></h5>
+              <select id="question_2" name="question_2">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes">Πολύ Συχνά</option>
+                <option value="yes">Συχνά</option>
+                <option value="yes">Σπάνια</option>
+                <option value="no">Καθόλου</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_3">3. Έχεις προσπαθήσει να φτιάξει ή έχεις φτιάξει ποτέ ένα AR φίλτο;</label></h5>
+              <select id="question_3" name="question_3">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes1">Ναι, έχω φτιάξει.</option>
+                <option value="yes2">Ναι, έχω προσπαθήσει.</option>
+                <option value="no">Δεν έχω φτιάξει, ούτε προσπαθήσει.</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_4">4. Θα σε ενδίεφερε να εμπλουτίσεις τις γνώσεις σου στα ΑR φίλτρα;</label></h5>
+              <select id="question_4" name="question_4">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes">Ναι.</option>
+                <option value="no">Όχι.</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_5">5. Θα ήθελες να μάθεις περισσότερα για τη βιβλιοθήκη OpenCV;</label></h5>
+              <select id="question_5" name="question_5">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes">Ναι.</option>
+                <option value="maybe">Μπορεί.</option>
+                <option value="no">Όχι.</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_6">6. Θα πλήρωνες για να παρακολουθήσεις μαθήματα ή σεμινάρια εκμάθησης δημιουργίας φίλτρων;</label></h5>
+              <select id="question_6" name="question_6">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes">Ναι.</option>
+                <option value="maybe">Μπορεί.</option>
+                <option value="no">Όχι.</option>
+              </select>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_7">7. Ποια social media ιστοσελίδα δε σου αρέσει καθόλου;</label></h5>
+              <p></p>
+              <input list="socials" name="question_7" id="question_7" autocomplete="on" placeholder="Γράψε ή επέλεξε εδώ">
+              <datalist id="socials2">
+                <option value="Facebook">
+                  <option value="Instagram">
+                    <option value="Snapchat">
+                      <option value="Tik Tok">
+              </datalist>
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_8">8. Σε ποια ηλικία πήρες το πρώτο σου smartphone;</label></h5>
+              <input type="number" id="question_8" name="question_8" placeholder="Η ηλίκια σου τότε." min="5" max="110">
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_9">9. Τι επαγγέλεσαι;</label></h5>
+              <input type="text" id="question_9" name="question_9" placeholder="Το επάγγελμα σου">
+            </section>
+            <section class="input-checker">
+              <h5><label for="question_10">10. Σου αρέσει η ιστοσελίδα μας;</label></h5>
+              <select id="question_10" name="question_10">
+                <option value="" selected disabled hidden>Επιλογές</option>
+                <option value="yes">Πάρα πολύ.</option>
+                <option value="maybe">Καλή, αλλά βαρέθηκα.</option>
+                <option value="no">Χάλια είναι.</option>
+              </select>
+            </section>
+          </fieldset>
+          <button onclick="validateInputs()" class="button">Yποβολή στοιχείων</button>
+        </form>
+      </section>
+    </article>
+  </main>
+  <aside>
+    <ul>
+      <li>
+        <h2>Διαφημίσεις</h2>
+      </li>
+      <li><a href="https://wordpress.com/el/" target="_blank"><img src="media/ad1.png" alt="Advertisement 1"/></a></li>
+      <li><a href="https://gitlab.com" target="_blank"><img src="media/ad2.png" alt="Advertisement 2"/></a></li>
+      <li><a href="https://nodejs.org/en/" target="_blank"><img src="media/ad3.png" alt="Advertisement 3"/></a></li>
+    </ul>
+  </aside>
+  <footer>
+    <p>Copyright &copy; 2021 All Rights Reserved by Panagiotis Panagiotou</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

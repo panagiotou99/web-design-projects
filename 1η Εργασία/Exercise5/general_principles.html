@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="../Exercise4/media/favicon.png" />
+  <link rel="stylesheet" href="styles.css">
+  <title>AR Filters - Γενικές Αρχές Ανάπτυξης</title>
+</head>
+
+<body class="container">
+  <header>
+    <picture>
+      <source media="(min-width:900px)" srcset="../Exercise4/media/banner1.png">
+      <source media="(min-width:600px)" srcset="media/TABLET-banner1.png">
+      <img src="media/MIN-banner1.png" id="banner" alt="Website's banner">
+    </picture>
+    <nav>
+      <ul>
+        <li><a href="index.html">Αρχική</a></li>
+        <li><a href="general_principles.html" class="active">Γενικές Αρχές Ανάπτυξης</a></li>
+        <li><a href="tips.html">Προετοιμασία</a></li>
+        <li><a href="../index.html">Έξοδος</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>Πως λειτουργούν τα φίλτρα AR;</h1>
+      <figure>
+        <picture>
+          <source media="(min-width:900px)" srcset="../Exercise4/media/banner4.jpg">
+          <source media="(min-width:600px)" srcset="media/TABLET-banner4.jpg">
+          <img src="media/MIN-banner4.jpg" alt="Σκίτσο ενός smart phone που αναλύει το ανθρώπινο πρόσωπο">
+        </picture>
+        <figcaption>Το λογισμικό αντιλαμβάνεται το ανθρώπινο πρόσωπο αναλύοντας το σε πολλά επιμέρους "κομμάτια".
+        </figcaption>
+      </figure>
+      <div id="required_2_columns">
+        <div id="col1">
+          <p>Tα πιο κοινά <strong>API</strong>, δηλαδή “<em>Application Programming Interface</em>”, που χρησιμοποιούνται για την ανάπτυξη της τεχνολογίας των φίλτρων αυτών από τους προγραμματιστές είναι:</p>
+          <ul id="unordered_list_info">
+            <li>Tο Google Cloud Vision API για Android.</li>
+            <li>Tο Google Mobile Vision ioS API.</li>
+            <li>Tο Microsoft Cognitive ServicesI.</li>
+            <li>Tο Core Image API.</li>
+          </ul>
+        </div>
+        <div id="col2">
+          <p>Kάθε API περνάει από δύο φάσεις, με σκοπό να αναγνωρίσει ένα πρόσωπο:</p>
+          <ol>
+            <li>Η φάση ανάλυσης της εικόνας.</li>
+            <li>Η φάση επεξεργασίας της εικόνας.</li>
+          </ol>
+        </div>
+      </div>
+      <p>H πρώτη φάση είναι μεγαλύτερης πολυπλοκότητας λόγω των διάφορων αλγορίθμων που τρέχουν σε αυτή. Οι αλγόριθμοι αυτοί χρησιμοποιούνται συχνά στη <strong>Μηχανική Μάθηση</strong>(“<em>Machine Learning</em>”) και απαιτούν την εφαρμογή ενός ηλεκτρονικού
+        “
+        <em>Gaussian”</em> φίλτρου. Συνήθως, για να πραγματοποιηθεί αυτή η διαδικασία, απαιτείται ο συνδιασμός μεθόδων, όπως της προσαρμοσμένης εξισορρόπηση ιστογράμματος “<strong>HOG</strong>” (από το “<em>Histogram of Oriented Gradients</em>”) και μία
+        μηχανή διανυσματικής υποστήριξης <strong>“SVM”</strong> (από το “<em>Support-vector machine</em>”) (αν και οι συγκεκριμένες εφαρμόζονται μόνο σε στατικές εικόνες και δεν αναγνωρίζουν πρόσωπα σε μία ενεργή κάμερα).</p>
+      <p>H μέθοδος <strong>HOG</strong> διαιρεί την εικόνα σε πολλά διασυνδεδεμένα κελιά. Τα κελιά αυτά αναλύονται σε διάφορες μετρήσεις, όπως της κατεύθυνσης του γείσου τους και την ένταση της διαβάθμισης του χρώματός τους και έτσι καθορίζεται αν ένα συγκεκριμένο
+        κομμάτι της εικόνας περιέχει πρόσωπο ή όχι (η προαναφερθείσα μέθοδος SVM χρησιμοποιείται για τον καθορισμό). Έπειτα, αφού πραγματοποιηθεί η ταυτοποίηση του προσώπου, ξεκινά η ανάλυση και η αναγνώριση των επιμέρους χαρακτηριστικών, δηλαδή των ματιών,
+        των φρυδιών και των γωνιών του προσώπου. Αυτή η διαδικασία επιστημονικά λέγεται <strong>“Facial Landmark Detection”</strong>. Η διαδικασία που ακολουθεί είναι να σαρώσει τα μέρη της εικόνας που έχει ανιχνευτεί προηγουμένως το πρόσωπο και να υποδείξει
+        τις ακριβείς συντεταγμένες των χαρακτηριστικών του προσώπου πάνω στο δισδιάστατο πλάνο.
+      </p>
+    </article>
+    <article>
+      <h2>Πλαίσιο Ανίχνευσης Αντικειμένων Viola – Jones </h2>
+      <figure>
+        <picture>
+          <source media="(min-width:900px)" srcset="../Exercise4/media/banner5.jpg">
+          <source media="(min-width:600px)" srcset="media/TABLET-banner5.jpg">
+          <img src="media/MIN-banner5.jpg" alt="Σκίτσο του πλαισίου ανίχνευσης Viola Jones">
+        </picture>
+        <figcaption>Το πλαίσιο ανίχνευσης αντικειμένων Viola – Jones προτάθηκε το 2001 από τον Paul Viola και τον Michael Jones.</figcaption>
+      </figure>
+      <p>Υπάρχει μία εναλλακτική των μεθόδων HOG και SVM που είναι το <strong>πλαίσιο ανίχνευσης αντικειμένων “Viola-Jones”</strong>. Η μέθοδος αυτή βασιζόμενη στην υπολογιστική όραση χρησιμοποιεί «καταρράκτες ταξινομητών» και είναι σε θέση να αναγνωρίσει
+        πρόσωπα σε πραγματικό χρόνο. , η οποία έχει ως αντικείμενο τη χρήση των τεχνικών ανίχνευσης και αναγνώρισης προσώπου από γωνία 90 μοιρών, και πώς αυτές μπορούν να χρησιμοποιηθούν στις εφαρμογές.
+      </p>
+      <p>Έτσι, με τη μέθοδο Viola-Jones, λαμβάνουμε ένα “<strong>fragment”</strong> της εικόνας που περιορίζεται από το πλαίσιο που περιλαμβάνει το ανθρώπινο πρόσωπο μαζί με τις <em>2D</em> συντεταγμένες που ορίζουν τη θέση των ζυγωματικών, των φρυδιών,
+        των ματιών, του στόματος και της μύτης. Tο επόμενο στάδιο επεξεργασίας για το fragment αυτό θα είναι η επαύξηση ενός συγκεκριμένου οπτικού αντικειμένου – η λεγόμενη «<em>μάσκα</em>» (στο παράδειγμα του Snapchat, το πρόσωπο του σκύλου ή το στέμμα
+        λουλουδιών). Ξανά, τα ήδη αναγνωρισμένα χαρακτηριστικά του προσώπου χρησιμοποιούνται για αυτό. Επιτρέπουν την επαύξηση ενός συγκεκριμένου οπτικού αντικειμένου στην αναγκαία θέση του και την κλιμάκωση του αντίστοιχα (για παράδειγμα, όταν εμφανίζεται
+        η εικόνα του στέμματος λουλουδιών, το πρόγραμμα το εφαρμόζει στη θέση του μετώπου και στην προσωρινή του περιοχή που βρίσκεται στο καρέ).
+      </p>
+    </article>
+  </main>
+  <aside>
+    <ul id="external_links">
+      <li>
+        <h2>Εξωτερικές Πηγές</h2>
+      </li>
+      <li><a href="https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/" target="_blank">API</a></li>
+      <li><a href="https://learnopencv.com/histogram-of-oriented-gradients/" target="_blank">Histogram of Oriented Gradients</a></li>
+      <li><a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47" target="_blank">Support Vector Machine</a></li>
+      <li><a href="https://towardsdatascience.com/understanding-face-detection-with-the-viola-jones-object-detection-framework-c55cc2a9da14" target="_blank">Viola-Jones</a></li>
+    </ul>
+  </aside>
+  <footer>
+    <p>Copyright &copy; 2021 All Rights Reserved by Panagiotis Panagiotou</p>
+  </footer>
+</body>
+</html>

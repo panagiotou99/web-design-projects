@@ -1,0 +1,25 @@
+<main>
+   <acticle id="BooksWrapper">
+      <h1>My Favorite Books</h1>
+      <section class="search">
+         <input type="text" id="userSearchInput" name="userSearchInput" placeholder="Filter favorites"></input>
+         <input type="submit" id="searchButton" value="Filter" onclick="filterFavoriteBooks()" ></input>
+      </section>
+      <section>
+         <ul id="favoriteBooks">
+            {{#each books}}
+            <ul class = "favoriteBook">
+               <h2> {{title}}</h2>
+               <li>{{subtitle}}</li>
+               <li>by {{author}}</li>
+               <li>#{{id}}</li>
+               <li class="comment">{{comment}}</li>
+               <a  href="/favorites/{{_id}}"><button class="editBttn">Edit</button></a>
+               <a class="delete" data-doc="{{_id}}"><button class="unfavoriteBttn">Unfavorite</button></a>
+            </ul>
+            <hr class="divider_line">
+            {{/each}}
+         </ul>
+      </section>
+   </acticle>
+</main>
